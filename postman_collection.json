@@ -1,0 +1,39 @@
+{
+  "info": {
+    "name": "Golubev Media Portal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{"key": "baseUrl", "value": "http://localhost:8080"}],
+  "item": [
+    {
+      "name": "Articles",
+      "item": [
+        {"name":"List","request":{"method":"GET","url":"{{baseUrl}}/api/articles"}},
+        {"name":"Create","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"title\":\"Первая статья\",\"text\":\"Текст статьи\",\"author\":\"Илья Голубев\",\"publishedAt\":\"2026-11-22T12:00:00\"}"},"url":"{{baseUrl}}/api/articles"}},
+        {"name":"Get","request":{"method":"GET","url":"{{baseUrl}}/api/articles/1"}},
+        {"name":"Update","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"title\":\"Обновленная статья\",\"text\":\"Новый текст\",\"author\":\"Илья Голубев\",\"publishedAt\":\"2026-11-22T12:00:00\"}"},"url":"{{baseUrl}}/api/articles/1"}},
+        {"name":"Delete","request":{"method":"DELETE","url":"{{baseUrl}}/api/articles/1"}}
+      ]
+    },
+    {
+      "name": "Videos",
+      "item": [
+        {"name":"List","request":{"method":"GET","url":"{{baseUrl}}/api/videos"}},
+        {"name":"Create","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"title\":\"Новое видео\",\"url\":\"https://example.com/video.mp4\",\"durationSeconds\":600}"},"url":"{{baseUrl}}/api/videos"}},
+        {"name":"Get","request":{"method":"GET","url":"{{baseUrl}}/api/videos/1"}},
+        {"name":"Update","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"title\":\"Обновленное видео\",\"url\":\"https://example.com/video.mp4\",\"durationSeconds\":700}"},"url":"{{baseUrl}}/api/videos/1"}},
+        {"name":"Delete","request":{"method":"DELETE","url":"{{baseUrl}}/api/videos/1"}}
+      ]
+    },
+    {
+      "name": "Podcasts",
+      "item": [
+        {"name":"List","request":{"method":"GET","url":"{{baseUrl}}/api/podcasts"}},
+        {"name":"Create","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"title\":\"Техноподкаст\",\"episodes\":[{\"episodeNumber\":1,\"title\":\"Выпуск 1\",\"audioUrl\":\"https://example.com/1.mp3\",\"durationSeconds\":1800}]}"},"url":"{{baseUrl}}/api/podcasts"}},
+        {"name":"Get","request":{"method":"GET","url":"{{baseUrl}}/api/podcasts/1"}},
+        {"name":"Update","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"title\":\"Обновленный подкаст\",\"episodes\":[{\"episodeNumber\":1,\"title\":\"Выпуск 1\",\"audioUrl\":\"https://example.com/1.mp3\",\"durationSeconds\":1900}]}"},"url":"{{baseUrl}}/api/podcasts/1"}},
+        {"name":"Delete","request":{"method":"DELETE","url":"{{baseUrl}}/api/podcasts/1"}}
+      ]
+    }
+  ]
+}
